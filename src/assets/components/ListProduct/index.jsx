@@ -1,9 +1,19 @@
 import Container from "./styles";
-import List from "../Product";
-function ListProduct() {
-	return;
-	<Container>
-		<Product />
-	</Container>;
+import Product from "../Product";
+function ListProduct({ listProducts, setCurrentSale, currentSale }) {
+	return (
+		<Container>
+			<ul>
+				{listProducts?.map((product) => (
+					<Product
+						currentSale={currentSale}
+						setCurrentSale={setCurrentSale}
+						product={product}
+						key={product.id}
+					/>
+				))}
+			</ul>
+		</Container>
+	);
 }
 export default ListProduct;
