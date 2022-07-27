@@ -61,6 +61,9 @@ const Container = styled.li`
 		line-height: 1rem;
 		height: 20px;
 		align-self: center;
+		&:hover {
+			color: var(--color-gray-100);
+		}
 	}
 
 	.buttons__amount {
@@ -79,6 +82,10 @@ const Container = styled.li`
 			border-radius: 50%;
 			width: 15px;
 			font-weight: 700;
+			&:hover {
+				color: var(--color-gray-30);
+				background-color: var(--color-gray-100);
+			}
 		}
 		p {
 			font-size: 0.8rem;

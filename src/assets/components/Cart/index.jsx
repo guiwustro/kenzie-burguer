@@ -18,7 +18,11 @@ function Cart({ setCurrentSale, currentSale, cartTotal, setCartTotal }) {
 						/>
 					))}
 				</ul>
-				<CartTotal cartTotal={cartTotal} />
+				<CartTotal
+					setCartTotal={setCartTotal}
+					cartTotal={cartTotal}
+					setCurrentSale={setCurrentSale}
+				/>
 			</div>
 		</Container>
 	);

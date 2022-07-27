@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
 	display: flex;
-	height: 60px;
+	height: 50px;
 	border: 2px solid var(--color-gray-50);
 	border-radius: 8px;
 	margin-top: 8px;
@@ -37,7 +37,7 @@ const Container = styled.div`
 		align-items: center;
 		border: var(--color-primary);
 		border-radius: 8px;
-		height: 40px;
+		height: 35px;
 		font-size: 0.875rem;
 	}
 	button:hover {

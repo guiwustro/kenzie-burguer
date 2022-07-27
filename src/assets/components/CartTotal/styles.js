@@ -6,7 +6,7 @@ const Container = styled.div`
 	flex-direction: column;
 	grid-template-areas:
 		"total price"
-		"removeBtn removeBtn";
+		"removeAllBtn removeAllBtn";
 	padding: 20px 10px;
 	.cart__total {
 		grid-area: total;
@@ -20,17 +20,23 @@ const Container = styled.div`
 		color: var(--color-grey-50);
 		justify-self: end;
 	}
-	.remove__button {
-		grid-area: removeBtn;
+	.remove-all__button {
+		grid-area: removeAllBtn;
 		height: 60px;
 		border-radius: 8px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		align-self: center;
 		font-weight: 600;
 		font-size: 1rem;
 		line-height: 1.2rem;
-		color: var(--color-grey-20);
+		background-color: var(--color-gray-20);
+		color: var(--color-gray-50);
+		border: 2px solid var(--color-gray-20);
+		border-radius: 8px;
+		&:hover {
+			color: var(--color-gray-30);
+			background-color: var(--color-gray-100);
+			border: 2px solid var(--color-gray-100);
+		}
 	}
 `;
 

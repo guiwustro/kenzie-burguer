@@ -4,10 +4,9 @@ const Container = styled.aside`
 	grid-area: cart;
 	display: flex;
 	flex-direction: column;
-	width: 325px;
 	justify-self: center;
+	width: 90%;
 	margin-top: 20px;
-
 	h1 {
 		font-size: 1.2rem;
 		font-weight: 600;
@@ -23,6 +22,7 @@ const Container = styled.aside`
 	}
 	.cart--bgc-grey {
 		background-color: var(--color-gray-0);
+		border-radius: 0px 0px 5px 5px;
 	}
 	ul {
 		display: flex;
@@ -33,8 +33,11 @@ const Container = styled.aside`
 		padding: 10px;
 	}
 	@media (min-width: 1024px) {
+		width: 325px;
+
 		margin-top: 0;
 		margin-right: 5vw;
+		margin-left: 0;
 		justify-self: end;
 	}
 `;

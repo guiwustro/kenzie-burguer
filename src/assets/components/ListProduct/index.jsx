@@ -1,14 +1,22 @@
 import Container from "./styles";
 import Product from "../Product";
-function ListProduct({ listProducts, setCurrentSale, currentSale }) {
+function ListProduct({
+	listProducts,
+	setCurrentSale,
+	currentSale,
+	setFilteredProducts,
+	filteredProducts,
+	showCart,
+}) {
 	return (
-		<Container>
+		<Container showCart={showCart}>
 			<ul>
-				{listProducts?.map((product) => (
+				{filteredProducts?.map((product) => (
 					<Product
 						currentSale={currentSale}
 						setCurrentSale={setCurrentSale}
 						product={product}
+						showCart={showCart}
 						key={product.id}
 					/>
 				))}

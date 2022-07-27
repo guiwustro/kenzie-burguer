@@ -4,36 +4,61 @@ import Header from "./assets/components/Header";
 import ListProduct from "./assets/components/ListProduct";
 import Container from "./styles";
 import Global from "./assets/styles/global";
-
+import api from "./assets/services/api";
+import NotFound from "./assets/components/NotFound";
 function App() {
 	const [listProducts, setListProducts] = useState([]);
 	const [filteredProducts, setFilteredProducts] = useState([]);
 	const [currentSale, setCurrentSale] = useState([]);
 	const [cartTotal, setCartTotal] = useState(0);
-
+	const [showCart, setShowCart] = useState(false);
+	const [showNotFound, setShowNotFound] = useState(false);
 	useEffect(() => {
-		fetch("https://hamburgueria-kenzie-json-serve.herokuapp.com/products")
-			.then((res) => res.json())
-			.then((res) => setListProducts(res))
+		api
+			.get("/products")
+			.then((res) => {
+				setListProducts(res.data);
+				setFilteredProducts(res.data);
+			})
 			.catch((err) => console.log(err));
 	}, []);
+
+	useEffect(() => {
+		currentSale.length != 0 ? setShowCart(true) : setShowCart(false);
+
+		return () => {
+			setShowCart(false);
+		};
+	}, [currentSale, showCart]);
+
 	return (
-		<Container>
+		<Container showCart={showCart}>
 			<Global />
-			<Header />
-			<ListProduct
+			<Header
 				listProducts={listProducts}
-				setCurrentSale={setCurrentSale}
-				currentSale={currentSale}
-				filteredProducts={filteredProducts}
 				setFilteredProducts={setFilteredProducts}
+				setShowNotFound={setShowNotFound}
 			/>
-			<Cart
-				setCurrentSale={setCurrentSale}
-				currentSale={currentSale}
-				cartTotal={cartTotal}
-				setCartTotal={setCartTotal}
-			/>
+			{showNotFound ? (
+				<NotFound />
+			) : (
+				<ListProduct
+					listProducts={listProducts}
+					setCurrentSale={setCurrentSale}
+					currentSale={currentSale}
+					filteredProducts={filteredProducts}
+					setFilteredProducts={setFilteredProducts}
+					showCart={showCart}
+				/>
+			)}
+			{showCart ? (
+				<Cart
+					setCurrentSale={setCurrentSale}
+					currentSale={currentSale}
+					cartTotal={cartTotal}
+					setCartTotal={setCartTotal}
+				/>
+			) : null}
 		</Container>
 	);
 }

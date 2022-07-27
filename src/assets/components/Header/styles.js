@@ -22,7 +22,7 @@ const Container = styled.header`
 	}
 	@media (min-width: 1440px) {
 		max-width: 1440px;
-		margin: 0 auto;
+
 		&::after {
 			content: "";
 			background-color: var(--color-gray-0);

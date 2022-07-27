@@ -2,7 +2,10 @@ import styled from "styled-components";
 
 const Item = styled.li`
 	display: flex;
+
 	width: 300px;
+	min-width: 200px;
+
 	height: 350px;
 	justify-content: space-between;
 	flex-direction: column;
@@ -27,7 +30,7 @@ const Item = styled.li`
 	}
 
 	figure img {
-		width: 177px;
+		height: 150px;
 	}
 
 	.item__category {
@@ -62,6 +65,19 @@ const Item = styled.li`
 
 		margin-bottom: 23px;
 		margin-left: 20px;
+	}
+	@media (min-width: 1024px) {
+		width: max-content;
+		width: auto;
+		min-width: max-content;
+
+		/* flex-basis: ${({ showCart }) => (showCart ? `30.3333%` : `32.3333%`)}; */
+		/* ! A minha condição não está funcionando... Pq??? Ela não está sendo atualizadaa */
+		flex-basis: ${({ showCart }) => (showCart ? `30.3333%` : `30.3333%`)};
+	}
+	@media (min-width: 1440px) {
+		flex-grow: 0;
+		flex-basis: ${({ showCart }) => (showCart ? `33.333%` : `23.875%`)};
 	}
 `;
 

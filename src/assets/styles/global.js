@@ -30,6 +30,7 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
     width: 100vw;
+
   }
   body, input, button, textarea {
   font-family: 'Inter', sans-serif;
@@ -41,6 +42,7 @@ export default createGlobalStyle`
   /* width */
   ::-webkit-scrollbar {
     width: 8px;
+    height: 8px;
   }
   /* Track */
   ::-webkit-scrollbar-track {

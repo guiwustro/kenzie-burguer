@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Container from "./styles";
+import Product from "./styles";
 function CartProduct({ product, setCurrentSale, currentSale, setCartTotal }) {
 	const indexCurrentProduct = currentSale.findIndex(
 		({ id }) => id === product.id
@@ -11,6 +11,10 @@ function CartProduct({ product, setCurrentSale, currentSale, setCartTotal }) {
 			.reduce((acc, previous) => acc + previous.amountPrice, 0)
 			.toFixed(2);
 		setCartTotal(total);
+		// ! É OBRIGATÓRIO ESSE RETURN () => Ele é executado quando a currentSale está VAZIA!! É a parte de desmontagem do carrinho
+		return () => {
+			setCartTotal(0);
+		};
 	}, [currentSale]);
 
 	const updateAmountPrice = () => {
@@ -24,6 +28,7 @@ function CartProduct({ product, setCurrentSale, currentSale, setCartTotal }) {
 		updateAmountPrice();
 		setCurrentSale(copyCurrentSale);
 	};
+
 	const minusOneProduct = () => {
 		if (copyCurrentSale[indexCurrentProduct].amount > 1) {
 			copyCurrentSale[indexCurrentProduct].amount--;
@@ -32,8 +37,18 @@ function CartProduct({ product, setCurrentSale, currentSale, setCartTotal }) {
 		}
 	};
 
+	const removeProduct = () => {
+		setCurrentSale((old) =>
+			old.filter((_, index) => indexCurrentProduct != index)
+		);
+		//! No caso de tentar fazer o splice direto no old ele não atualiza automaticamente! Para usar o splice nesse caso é necessário criar uma variável, herdar os parâmetros, e na sequência fazer o splice
+		// let newArray = [...old];
+		// newArray.splice(indexCurrentProduct, 1);
+		// return newArray;
+	};
+
 	return (
-		<Container>
+		<Product>
 			<figure>
 				<img src={product.img} alt="" />
 			</figure>
@@ -46,8 +61,10 @@ function CartProduct({ product, setCurrentSale, currentSale, setCartTotal }) {
 				<button onClick={() => minusOneProduct()}>-</button>
 			</div>
 
-			<button className="button__remove">Remover</button>
-		</Container>
+			<button onClick={() => removeProduct()} className="button__remove">
+				Remover
+			</button>
+		</Product>
 	);
 }
 

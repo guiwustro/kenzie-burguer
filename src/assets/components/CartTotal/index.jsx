@@ -1,10 +1,18 @@
 import Container from "./styles";
-function CartTotal({ cartTotal }) {
+function CartTotal({ cartTotal, setCurrentSale }) {
+	const removeAllProducts = () => {
+		setCurrentSale([]);
+	};
 	return (
 		<Container>
 			<p className="cart__total">Total</p>
 			<p className="cart__price">R$ {cartTotal}</p>
-			<button className="remove__button">Remover todos</button>
+			<button
+				onClick={() => removeAllProducts()}
+				className="remove-all__button"
+			>
+				Remover todos
+			</button>
 		</Container>
 	);
 }

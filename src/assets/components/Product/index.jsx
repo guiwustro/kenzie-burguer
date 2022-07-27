@@ -11,13 +11,13 @@ function Product({ product, currentSale, setCurrentSale }) {
 			productsCartCopy[indexOnSale].amountPrice =
 				productsCartCopy[indexOnSale].amount *
 				productsCartCopy[indexOnSale].price;
+
 			return setCurrentSale(productsCartCopy);
 		} else {
 			product.amount = 1;
 			product.amountPrice = product.price;
 			setCurrentSale((oldState) => [...oldState, product]);
 		}
-		console.log(productsCartCopy);
 	};
 	return (
 		<Item>

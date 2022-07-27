@@ -6,12 +6,18 @@ const Container = styled.div`
 		"header "
 		"products "
 		"cart ";
+	grid-template-columns: 100vw;
 	max-width: 1440px;
 	@media (min-width: 1024px) {
-		grid-template-columns: auto 400px;
-		grid-template-areas:
-			"header header"
-			"products cart";
+		grid-template-columns: auto max-content;
+
+		grid-template-areas: ${({ showCart }) =>
+			showCart
+				? `	"header header"
+		"products cart"	`
+				: `	"header header"
+		"products products"	`};
+
 		column-gap: 20px;
 	}
 `;
