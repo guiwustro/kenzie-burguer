@@ -18,13 +18,10 @@ const Container = styled.header`
 	@media (min-width: 768px) {
 		grid-template-areas: "logo toogle search";
 		grid-template-columns: auto 100px 350px;
-		/* display: flex; */
 		align-items: center;
-		/* justify-content: space-between; */
 		flex-direction: row;
 		height: 80px;
 		padding-bottom: 20px;
-		/* padding: 0px 20px; */
 	}
 	@media (min-width: 1440px) {
 		max-width: 1440px;

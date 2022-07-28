@@ -3,11 +3,20 @@ import Container from "./styles";
 function InputSearch({ setFilteredProducts, listProducts, setShowNotFound }) {
 	const [productFiltered, setProductFiltered] = useState("");
 
+	const removeAccents = (string) => {
+		return string
+			.normalize("NFD")
+			.replace(/[\u0300-\u036f]/g, "")
+			.toLowerCase();
+	};
 	const getFilteredProduct = (e) => {
 		e.preventDefault();
-		const filteredList = listProducts.filter(({ name }) =>
-			name.toLowerCase().includes(productFiltered.toLowerCase())
+		const filteredList = listProducts.filter(
+			({ name, category }) =>
+				removeAccents(name).includes(removeAccents(productFiltered)) ||
+				removeAccents(category).includes(removeAccents(productFiltered))
 		);
+
 		setFilteredProducts(filteredList);
 		filteredList.length === 0 ? setShowNotFound(true) : setShowNotFound(false);
 	};
