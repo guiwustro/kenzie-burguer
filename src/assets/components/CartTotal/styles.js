@@ -10,14 +10,14 @@ const Container = styled.div`
 	padding: 20px 10px;
 	.cart__total {
 		grid-area: total;
-		color: var(--color-grey-100);
+		color: var(--color-gray-100);
 		align-self: center;
 		justify-self: start;
 	}
 	.cart__price {
 		grid-area: price;
 		align-self: center;
-		color: var(--color-grey-50);
+		color: var(--color-gray-50);
 		justify-self: end;
 	}
 	.remove-all__button {

@@ -4,13 +4,17 @@ const Item = styled.li`
 	display: flex;
 
 	width: 300px;
-	min-width: 200px;
+	min-width: 230px;
 
 	height: 350px;
 	justify-content: space-between;
 	flex-direction: column;
 	border: 2px solid var(--color-gray-0);
 	border-radius: 5px;
+
+	&:hover {
+		border-color: var(--color-gray-100);
+	}
 	h3 {
 		font-style: normal;
 		font-weight: 700;
@@ -61,23 +65,25 @@ const Item = styled.li`
 		border-radius: 8px;
 		height: 40px;
 		width: 106px;
-		color: var(--color-white);
+		color: var(--color-default-white);
 
 		margin-bottom: 23px;
 		margin-left: 20px;
 	}
 	@media (min-width: 1024px) {
 		width: max-content;
-		width: auto;
-		min-width: max-content;
+		min-width: 230px;
 
-		/* flex-basis: ${({ showCart }) => (showCart ? `30.3333%` : `32.3333%`)}; */
+		width: auto;
+
 		/* ! A minha condição não está funcionando... Pq??? Ela não está sendo atualizadaa */
-		flex-basis: ${({ showCart }) => (showCart ? `30.3333%` : `30.3333%`)};
+		/* flex-basis: ${({ showCart }) => (showCart ? `30.3333%` : `30.3333%`)}; */
+		flex-basis: ${({ showCart }) => (showCart ? `49.25%` : `32.3333%`)};
+		/* flex-basis: ${({ showCart }) => (showCart ? `30.3333%` : `49%`)}; */
 	}
 	@media (min-width: 1440px) {
 		flex-grow: 0;
-		flex-basis: ${({ showCart }) => (showCart ? `33.333%` : `23.875%`)};
+		flex-basis: ${({ showCart }) => (showCart ? `32.333%` : `23.875%`)};
 	}
 `;
 

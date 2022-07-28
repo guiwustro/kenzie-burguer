@@ -3,8 +3,9 @@ import styled from "styled-components";
 const Container = styled.main`
 	display: flex;
 	grid-area: products;
-	align-items: center;
 	justify-content: center;
+	max-width: 1440px;
+	align-items: start;
 
 	ul {
 		display: flex;
@@ -15,6 +16,7 @@ const Container = styled.main`
 		row-gap: 15px;
 		padding-left: 5vw;
 		padding-right: 5vw;
+		padding-bottom: 10px;
 	}
 	button:hover {
 		background-color: var(--color-primary-50);
@@ -26,12 +28,7 @@ const Container = styled.main`
 			flex-wrap: wrap;
 			align-items: center;
 			max-width: 100vw;
-			padding-right: 0;
-		}
-	}
-	@media (min-width: 1440px) {
-		ul {
-			padding-right: 5vw;
+			padding-right: ${({ showCart }) => (showCart ? `0` : `5vw`)};
 		}
 	}
 `;

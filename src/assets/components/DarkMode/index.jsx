@@ -3,37 +3,41 @@ import { useEffect, useState } from "react";
 
 const DarkMode = () => {
 	const lightTheme = {
-		"--color-total-container": "#ffffff",
-		"--color-grey-empty-title": "#868e96",
-		"--color-bgc-welcome-page": "#212529",
-		"--color-app": "#ffffff",
-		"--color-grey-5": "#343a40",
-		"--color-grey-4": "#212529",
-		"--color-grey-3": "#868e96",
-		"--color-grey-2": "#e9ecef",
-		"--color-grey-1": "#f8f9fa",
-		"--color-white:": "#ffffff",
-		"--color-black:": "#000000",
-		"--color-red-1": "#ff000099",
-	};
+		"--color-background": "#FFFFFF",
+		"--color-white": "#FFFFFF",
+		"--color-default-white": "#FFFFFF",
+		"--color-default-gray-100": "#333333",
+		"--color-default-gray-30": "#c8c7c7",
 
+		"--color-primary": "#27AE60",
+		"--color-primary-50": "#93D7AF",
+		"--color-secondary": "#EB5757",
+		"--color-gray-100": "#333333",
+		"--color-gray-50": "#828282",
+		"--color-gray-30": "#c8c7c7",
+		"--color-gray-20": "#E0E0E0",
+		"--color-gray-0": "#F5F5F5",
+	};
+	// #090B0D
 	const darkTheme = {
-		"--color-total-container": "#3f424a",
-		"--color-grey-empty-title": "#f8f9fa",
-		"--color-bgc-welcome-page": "#212529",
-		"--color-app": "#3f424a",
-		"--color-grey-5": "#f8f9fa",
-		"--color-grey-4": "#f8f9fa",
-		"--color-grey-3": "#868e96",
-		"--color-grey-2": "#a9b4c0",
-		"--color-grey-1": "#6c737a",
-		"--color-white:": "#ffffff",
-		"--color-black:": "#000000",
-		"--color-red-1": "#f08a8a",
+		"--color-background": "#1B1B1B",
+		"--color-default-white": "#FFFFFF",
+		"--color-default-gray-100": "#333333",
+		"--color-default-gray-30": "#c8c7c7",
+
+		"--color-white": "#1B1B1B",
+		"--color-primary": "#27AE60",
+		"--color-primary-50": "#93D7AF",
+		"--color-secondary": "#EB5757",
+		"--color-gray-100": "#E0E0E0",
+		"--color-gray-50": "#F5F5F5",
+		"--color-gray-30": "#333333",
+		"--color-gray-20": "#696969",
+		"--color-gray-0": "#212121",
 	};
 
 	const [isDark, setIsDark] = useState(
-		JSON.parse(localStorage.getItem("@nu-kenzie:dark-theme")) || false
+		JSON.parse(localStorage.getItem("@hamburgueria-kenzie:dark-theme")) || false
 	);
 
 	const setTheme = (theme) => {
@@ -43,7 +47,10 @@ const DarkMode = () => {
 	};
 
 	useEffect(() => {
-		localStorage.setItem("@nu-kenzie:dark-theme", JSON.stringify(isDark));
+		localStorage.setItem(
+			"@hamburgueria-kenzie:dark-theme",
+			JSON.stringify(isDark)
+		);
 	}, [isDark]);
 
 	return (

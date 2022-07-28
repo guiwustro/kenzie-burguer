@@ -13,7 +13,7 @@ const Container = styled.aside`
 		line-height: 1.5rem;
 		letter-spacing: 0em;
 		text-align: left;
-		color: var(--color-white);
+		color: var(--color-default-white);
 		background-color: var(--color-primary);
 		height: 65px;
 		padding-left: 20px;

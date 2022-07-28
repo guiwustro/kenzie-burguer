@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Item from "./styles";
-function Product({ product, currentSale, setCurrentSale }) {
+function Product({ product, currentSale, setCurrentSale, showCart }) {
 	const addToCart = (product) => {
 		const isOnSale = currentSale.some(({ id }) => id == product.id);
 		const indexOnSale = currentSale.findIndex(({ id }) => id == product.id);
@@ -20,7 +20,7 @@ function Product({ product, currentSale, setCurrentSale }) {
 		}
 	};
 	return (
-		<Item>
+		<Item showCart={showCart}>
 			<figure>
 				<img src={product.img} alt={product.name} />
 			</figure>

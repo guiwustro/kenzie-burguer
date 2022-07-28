@@ -3,13 +3,13 @@ import Sun from "../../img/sun.svg";
 import Moon from "../../img/moon.svg";
 
 const Toogle = styled.div`
-	/* Inspiração para o botão dark-mode... https://www.instagram.com/p/CgMOk9lF8A3/
- */
-
 	box-shadow: -8px -8px 15px #ffffff 8px 8px 25px rgba(0, 0, 0, 0.15);
 	border-radius: 30px;
 	justify-self: flex-end;
-
+	grid-area: toogle;
+	@media (min-width: 768px) {
+		justify-self: start;
+	}
 	#toggle {
 		display: none;
 	}

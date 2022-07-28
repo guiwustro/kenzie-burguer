@@ -11,6 +11,7 @@ const Container = styled.li`
 
 	width: 100%;
 	height: 80px;
+
 	figure {
 		grid-area: figure;
 		align-self: center;
@@ -63,6 +64,7 @@ const Container = styled.li`
 		align-self: center;
 		&:hover {
 			color: var(--color-gray-100);
+			text-decoration: underline;
 		}
 	}
 
@@ -76,13 +78,15 @@ const Container = styled.li`
 			align-items: center;
 			justify-content: center;
 			height: 15px;
-			background-color: var(--color-gray-30);
-			color: var(--color-gray-100);
+			background-color: var(--color-default-gray-30);
+			color: var(--color-default-gray-100);
 			border-color: transparent;
 			border-radius: 50%;
 			width: 15px;
 			font-weight: 700;
 			&:hover {
+				/* "--color-default-white": "#FFFFFF",
+		"--color-default-gray-100": "#333333", */
 				color: var(--color-gray-30);
 				background-color: var(--color-gray-100);
 			}

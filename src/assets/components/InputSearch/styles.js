@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 const Container = styled.div`
 	display: flex;
+	grid-area: search;
+	justify-self: center;
 	height: 50px;
 	border: 2px solid var(--color-gray-50);
 	border-radius: 8px;
@@ -9,14 +11,17 @@ const Container = styled.div`
 	max-width: 382px;
 	width: 280px;
 	background-color: var(--color-white);
+	max-width: 600px;
+
 	form {
 		height: 100%;
 		max-width: 382px;
+		min-width: 280px;
+		max-width: 600px;
 		display: flex;
 		justify-content: space-between;
 		padding: 12px;
 		align-items: center;
-		min-width: 280px;
 	}
 	input {
 		border: none;
@@ -24,6 +29,8 @@ const Container = styled.div`
 		padding-left: 4px;
 		font-size: 1rem;
 		color: var(--color-gray-100);
+		background-color: var(--color-white);
+		max-width: 65%;
 	}
 	input::placeholder {
 		font-size: 1rem;
@@ -44,9 +51,11 @@ const Container = styled.div`
 		background-color: var(--color-primary-50);
 	}
 	@media (min-width: 425px) {
-		min-width: 350px;
+		width: 100%;
+
 		form {
 			min-width: 350px;
+			width: 100%;
 		}
 	}
 	@media (min-width: 768px) {
