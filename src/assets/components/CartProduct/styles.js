@@ -85,8 +85,6 @@ const Container = styled.li`
 			width: 15px;
 			font-weight: 700;
 			&:hover {
-				/* "--color-default-white": "#FFFFFF",
-		"--color-default-gray-100": "#333333", */
 				color: var(--color-gray-30);
 				background-color: var(--color-gray-100);
 			}

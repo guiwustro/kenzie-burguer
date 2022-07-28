@@ -4,10 +4,20 @@ const Container = styled.div`
 	height: 140px;
 	display: grid;
 	flex-direction: column;
+	position: relative;
+
 	grid-template-areas:
 		"total price"
 		"removeAllBtn removeAllBtn";
 	padding: 20px 10px;
+	.cart__line {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 1.5px;
+		width: 100%;
+		background-color: var(--color-gray-20);
+	}
 	.cart__total {
 		grid-area: total;
 		color: var(--color-gray-100);

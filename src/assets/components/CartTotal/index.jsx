@@ -5,6 +5,7 @@ function CartTotal({ cartTotal, setCurrentSale }) {
 	};
 	return (
 		<Container>
+			<div className="cart__line"></div>
 			<p className="cart__total">Total</p>
 			<p className="cart__price">R$ {cartTotal}</p>
 			<button
