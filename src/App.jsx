@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import Cart from "./assets/components/Cart";
-import Header from "./assets/components/Header";
-import ListProduct from "./assets/components/ListProduct";
+import Cart from "./components/Cart";
+import Header from "./components/Header";
+import ListProduct from "./components/ListProduct";
 import Container from "./styles";
-import Global from "./assets/styles/global";
-import api from "./assets/services/api";
-import NotFound from "./assets/components/NotFound";
+import api from "./services/api";
+import Global from "./styles/global";
+import NotFound from "./components/NotFound";
+
 function App() {
 	const [listProducts, setListProducts] = useState([]);
 	const [filteredProducts, setFilteredProducts] = useState([]);

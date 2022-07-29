@@ -1,10 +1,8 @@
 import Container from "./styles";
 import Product from "../Product";
 function ListProduct({
-	listProducts,
 	setCurrentSale,
 	currentSale,
-	setFilteredProducts,
 	filteredProducts,
 	showCart,
 }) {

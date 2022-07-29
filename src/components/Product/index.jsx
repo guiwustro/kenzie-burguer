@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Item from "./styles";
 function Product({ product, currentSale, setCurrentSale, showCart }) {
 	const addToCart = (product) => {

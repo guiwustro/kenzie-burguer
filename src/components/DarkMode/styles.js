@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Sun from "../../img/sun.svg";
-import Moon from "../../img/moon.svg";
+import Sun from "../../assets/img/sun.svg";
+import Moon from "../../assets/img/moon.svg";
 
 const Toogle = styled.div`
 	box-shadow: -8px -8px 15px #ffffff 8px 8px 25px rgba(0, 0, 0, 0.15);
