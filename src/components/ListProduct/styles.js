@@ -6,7 +6,8 @@ const Container = styled.main`
 	justify-content: center;
 	max-width: 1440px;
 	align-items: start;
-
+	padding-left: 5vw;
+	padding-right: 5vw;
 	ul {
 		display: flex;
 		overflow-x: auto;
@@ -14,8 +15,7 @@ const Container = styled.main`
 		justify-content: flex-start;
 		column-gap: 1.5%;
 		row-gap: 15px;
-		padding-left: 5vw;
-		padding-right: 5vw;
+
 		padding-bottom: 10px;
 	}
 	button:hover {
@@ -23,6 +23,7 @@ const Container = styled.main`
 		border-color: var(--color-primary-50);
 	}
 	@media (min-width: 1024px) {
+		padding-right: 0;
 		ul {
 			display: flex;
 			flex-wrap: wrap;

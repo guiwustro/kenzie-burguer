@@ -3,16 +3,12 @@ import Logo from "../Logo";
 import InputSearch from "../InputSearch";
 import DarkMode from "../DarkMode";
 
-function Header({ listProducts, setFilteredProducts, setShowNotFound }) {
+function Header({}) {
 	return (
 		<Container>
 			<Logo />
 			<DarkMode />
-			<InputSearch
-				listProducts={listProducts}
-				setFilteredProducts={setFilteredProducts}
-				setShowNotFound={setShowNotFound}
-			/>
+			<InputSearch />
 		</Container>
 	);
 }

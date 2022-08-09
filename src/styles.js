@@ -8,7 +8,7 @@ const Container = styled.div`
 		"cart ";
 	grid-template-columns: 100vw;
 	max-width: 1440px;
-
+	width: 100%;
 	&::before {
 		content: "";
 		background-color: var(--color-background);

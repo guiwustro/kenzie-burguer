@@ -6,7 +6,6 @@ const Container = styled.header`
 	grid-template-areas: "logo toogle" "search search";
 
 	align-items: center;
-	width: 100vw;
 	height: 140px;
 	padding-left: 5vw;
 	padding-right: 5vw;
@@ -14,6 +13,7 @@ const Container = styled.header`
 	justify-self: end;
 	background-color: var(--color-gray-0);
 	margin-bottom: 30px;
+	width: 100%;
 
 	@media (min-width: 768px) {
 		grid-template-areas: "logo toogle search";

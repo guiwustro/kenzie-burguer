@@ -1,8 +1,11 @@
+import { useContext } from "react";
+import { CartContext } from "../../contexts/cart";
 import Item from "./styles";
-function Product({ product, currentSale, setCurrentSale, showCart }) {
+function Product({ product }) {
+	const { setCurrentSale, currentSale, showCart } = useContext(CartContext);
 	const addToCart = (product) => {
-		const isOnSale = currentSale.some(({ id }) => id == product.id);
-		const indexOnSale = currentSale.findIndex(({ id }) => id == product.id);
+		const isOnSale = currentSale?.some(({ id }) => id == product.id);
+		const indexOnSale = currentSale?.findIndex(({ id }) => id == product.id);
 
 		const productsCartCopy = [...currentSale];
 		if (isOnSale) {

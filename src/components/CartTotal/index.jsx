@@ -1,8 +1,9 @@
+import { useContext } from "react";
+import { CartContext } from "../../contexts/cart";
 import Container from "./styles";
-function CartTotal({ cartTotal, setCurrentSale }) {
-	const removeAllProducts = () => {
-		setCurrentSale([]);
-	};
+function CartTotal() {
+	const { cartTotal, removeAllProducts } = useContext(CartContext);
+
 	return (
 		<Container>
 			<div className="cart__line"></div>

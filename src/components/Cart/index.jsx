@@ -1,28 +1,21 @@
 import Container from "./styles";
 import CartProduct from "../CartProduct";
 import CartTotal from "../CartTotal";
+import { CartContext } from "../../contexts/cart";
+import { useContext } from "react";
 
-function Cart({ setCurrentSale, currentSale, cartTotal, setCartTotal }) {
+function Cart() {
+	const { currentSale } = useContext(CartContext);
 	return (
 		<Container>
 			<h1>Carrinho de compras</h1>
 			<div className="cart--bgc-grey">
 				<ul>
 					{currentSale?.map((product) => (
-						<CartProduct
-							setCurrentSale={setCurrentSale}
-							product={product}
-							currentSale={currentSale}
-							key={product.id}
-							setCartTotal={setCartTotal}
-						/>
+						<CartProduct product={product} key={product.id} />
 					))}
 				</ul>
-				<CartTotal
-					setCartTotal={setCartTotal}
-					cartTotal={cartTotal}
-					setCurrentSale={setCurrentSale}
-				/>
+				<CartTotal />
 			</div>
 		</Container>
 	);

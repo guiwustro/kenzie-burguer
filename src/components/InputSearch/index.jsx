@@ -1,34 +1,34 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { FilterProductsContext } from "../../contexts/filterProducts";
 import Container from "./styles";
-function InputSearch({ setFilteredProducts, listProducts, setShowNotFound }) {
-	const [productFiltered, setProductFiltered] = useState("");
+function InputSearch() {
+	const {
+		setSearchedProduct,
+		hasSearchedProduct,
+		searchedProduct,
+		filteredList,
+		setShowNotFound,
+	} = useContext(FilterProductsContext);
 
-	const removeAccents = (string) => {
-		return string
-			.normalize("NFD")
-			.replace(/[\u0300-\u036f]/g, "")
-			.toLowerCase();
-	};
+	const [inputSearch, setInputSearch] = useState("");
+
 	const getFilteredProduct = (e) => {
 		e.preventDefault();
-		const filteredList = listProducts.filter(
-			({ name, category }) =>
-				removeAccents(name).includes(removeAccents(productFiltered)) ||
-				removeAccents(category).includes(removeAccents(productFiltered))
-		);
-
-		setFilteredProducts(filteredList);
-		filteredList.length === 0 ? setShowNotFound(true) : setShowNotFound(false);
+		setSearchedProduct(inputSearch);
+		// hasSearchedProduct();
+		// ! não funciona pq??
+		// (await filteredList.length) > 0
+		// 	? setShowNotFound(false)
+		// 	: setShowNotFound(true);
 	};
 
 	return (
 		<Container>
 			<form onSubmit={(e) => getFilteredProduct(e)}>
 				<input
-					onChange={(event) => setProductFiltered(event.target.value)}
-					value={productFiltered}
+					onChange={(event) => setInputSearch(event.target.value)}
+					value={inputSearch}
 					type="text"
-					id=""
 					placeholder="Digitar Pesquisa"
 				/>
 				<button type="submit">Pesquisar</button>

@@ -1,23 +1,25 @@
 import Container from "./styles";
 import Product from "../Product";
-function ListProduct({
-	setCurrentSale,
-	currentSale,
-	filteredProducts,
-	showCart,
-}) {
+import { useContext, useEffect } from "react";
+import { ListProductsContext } from "../../contexts/listProducts";
+import { CartContext } from "../../contexts/cart";
+import { FilterProductsContext } from "../../contexts/filterProducts";
+
+function ListProduct() {
+	const { listProducts } = useContext(ListProductsContext);
+	const { showCart } = useContext(CartContext);
+	const { filteredList, searchedProduct } = useContext(FilterProductsContext);
+
 	return (
 		<Container showCart={showCart}>
 			<ul>
-				{filteredProducts?.map((product) => (
-					<Product
-						currentSale={currentSale}
-						setCurrentSale={setCurrentSale}
-						product={product}
-						showCart={showCart}
-						key={product.id}
-					/>
-				))}
+				{searchedProduct
+					? filteredList?.map((product) => (
+							<Product product={product} key={product.name} />
+					  ))
+					: listProducts?.map((product) => (
+							<Product product={product} key={product.name} />
+					  ))}
 			</ul>
 		</Container>
 	);
