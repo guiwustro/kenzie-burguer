@@ -1,33 +1,39 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { FilterProductsContext } from "../../contexts/filterProducts";
+import { ListProductsContext } from "../../contexts/listProducts";
 import Container from "./styles";
 function InputSearch() {
-	const {
-		setSearchedProduct,
-		hasSearchedProduct,
-		searchedProduct,
-		filteredList,
-		setShowNotFound,
-	} = useContext(FilterProductsContext);
+	const { listProducts } = useContext(ListProductsContext);
+	const { setShowNotFound, setFilteredList } = useContext(
+		FilterProductsContext
+	);
+	const [productSearched, setProductSearched] = useState("");
 
-	const [inputSearch, setInputSearch] = useState("");
+	const removeAccents = (string) => {
+		return string
+			.normalize("NFD")
+			.replace(/[\u0300-\u036f]/g, "")
+			.toLowerCase();
+	};
 
 	const getFilteredProduct = (e) => {
 		e.preventDefault();
-		setSearchedProduct(inputSearch);
-		// hasSearchedProduct();
-		// ! não funciona pq??
-		// (await filteredList.length) > 0
-		// 	? setShowNotFound(false)
-		// 	: setShowNotFound(true);
+		const newList = listProducts.filter(
+			({ name, category }) =>
+				removeAccents(name).includes(removeAccents(productSearched)) ||
+				removeAccents(category).includes(removeAccents(productSearched))
+		);
+
+		setFilteredList(newList);
+		newList.length === 0 ? setShowNotFound(true) : setShowNotFound(false);
 	};
 
 	return (
 		<Container>
 			<form onSubmit={(e) => getFilteredProduct(e)}>
 				<input
-					onChange={(event) => setInputSearch(event.target.value)}
-					value={inputSearch}
+					onChange={(event) => setProductSearched(event.target.value)}
+					value={productSearched}
 					type="text"
 					placeholder="Digitar Pesquisa"
 				/>
