@@ -48,7 +48,6 @@ const CartProvider = ({ children }) => {
 
 	const addOneProduct = (currentId) => {
 		const currentIndex = indexProduct(currentId);
-		console.log(currentSale);
 		copyCurrentSale[currentIndex].amount++;
 
 		setCurrentSale(copyCurrentSale);
