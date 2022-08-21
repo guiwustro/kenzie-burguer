@@ -7,6 +7,7 @@ const Container = styled.aside`
 	justify-self: center;
 	width: 90%;
 	margin-top: 20px;
+	margin-bottom: 50px;
 	h1 {
 		font-size: 1.2rem;
 		font-weight: 600;

@@ -8,6 +8,7 @@ const CartProvider = ({ children }) => {
 	const [showCart, setShowCart] = useState(false);
 
 	useEffect(() => {
+		// setShowCart(!currentSale.length)
 		currentSale.length != 0 ? setShowCart(true) : setShowCart(false);
 		return () => {
 			setShowCart(false);
