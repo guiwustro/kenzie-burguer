@@ -15,9 +15,10 @@
 
 ## Sobre o projeto
 
-É uma aplicação de página única de um e-commerce, o qual possui uma vitrine com
-produtos com botões de adicionar ao carrinho, um carrinho de compras e um campo
-de pesquisa. <br />
+A aplicação conta com um tema escuro além do tema claro, para o usuário
+escolher, e o tema fica salvo na página do usuário, ou seja, caso o usuário
+selecione o modo escuro, a próxima vez que ele conectar na página continuará
+sendo esse modo. <br/>
 
 O carrinho de compras só é visível ao usuário quando algum produto é adicionado
 ao carrinho. Dentro dele o usuário é capaz de aumentar, diminuir a quantidade do
@@ -32,7 +33,7 @@ O projeto foi realizado em React, e as bibliotecas utilizadas foram:
 - Styled components;
 - Context API;
 - React icons;
-
+- Hooks (UseHook, UseEffect);
 <!-- USAGE EXAMPLES -->
 
 ## Usabilidade

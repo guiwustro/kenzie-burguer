@@ -11,20 +11,18 @@ function ListProduct() {
 	const { showCart } = useContext(CartContext);
 	const { showNotFound, filteredList } = useContext(FilterProductsContext);
 
+	if (showNotFound) return <NotFound />;
+
 	return (
 		<Container showCart={showCart}>
 			<ul>
-				{showNotFound ? (
-					<NotFound />
-				) : filteredList.length > 0 ? (
-					filteredList?.map((product) => (
-						<Product product={product} key={product.name} />
-					))
-				) : (
-					listProducts?.map((product) => (
-						<Product product={product} key={product.name} />
-					))
-				)}
+				{!!filteredList.length
+					? filteredList?.map((product) => (
+							<Product product={product} key={product.name} />
+					  ))
+					: listProducts?.map((product) => (
+							<Product product={product} key={product.name} />
+					  ))}
 			</ul>
 		</Container>
 	);
