@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/guiwustro/repo_name">
+  <a href="https://hamburgueria-kenzie-guiwustro.vercel.app/">
     <img src="src/assets/img/H_Icon.png" alt="Logo" width="40" height="40">
   </a>
 
@@ -10,6 +10,8 @@
   <p align="center">
     É uma aplicação de página única de um e-commerce, o qual possui uma vitrine com produtos com botões de adicionar ao carrinho, um carrinho de compras e uma barra de filtros, um campo de pesquisa.
     <br />
+    <a href="https://hamburgueria-kenzie-guiwustro.vercel.app/">Link do projeto</a>
+
   </p>
 </div>
 
